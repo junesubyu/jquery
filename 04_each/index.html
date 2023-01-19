@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js-each</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>each</h1>
+            <div class="card">
+                <div class="card_photo">
+                    <img src="../images/img_01.jpg" alt="" />
+                    <div class="sns">
+                        <span class="share"><i class="xi-share-alt"></i></span>
+                        <span><i class="xi-facebook"></i></span>
+                        <span><i class="xi-youtube-play"></i></span>
+                        <span><i class="xi-instagram"></i></span>
+                    </div>
+                </div>
+                <div class="card_info">
+                    <h2>Lorem, ipsum.</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Laborum fuga aut laboriosam nobis reiciendis accusamus,
+                        quidem soluta perferendis aspernatur voluptatem nemo
+                        odio laudantium omnis dolorum necessitatibus sint?
+                        Iusto, at sequi!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var sns = $('.sns')
+            var item = $('.sns span')
+            var time = 300
+            // console.log(item)
+            sns.hover(
+                function () {
+                    item.each(function (index) {
+                        $(this)
+                            .stop()
+                            .animate({ left: index * 40 }, time)
+                    })
+                },
+                function () {
+                    item.each(function (index) {
+                        $(this).stop().animate({ left: 0 }, time)
+                    })
+                }
+            )
+        </script>
+    </body>
+</html>
