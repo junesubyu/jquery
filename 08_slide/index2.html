@@ -18,7 +18,7 @@
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style2.css" />
     </head>
     <body>
         <div class="go_top"><i class="xi-angle-up"></i></div>
@@ -178,6 +178,8 @@
                     애기 아이들의 이름과, 나의 지나가는 봅니다.
                 </p>
             </div>
+
+            <div class="dimm"></div>
         </div>
 
         <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -197,17 +199,7 @@
         </script>
 
         <script>
-            $('.nav li').hover(function () {
-                $(this).find('ul').stop().slideToggle('fast')
-            })
-
             $(window).scroll(function () {
-                if ($(this).scrollTop() > 200) {
-                    $('.header').addClass('on')
-                } else {
-                    $('.header').removeClass('on')
-                }
-
                 if ($(this).scrollTop() > 600) {
                     $('.go_top').fadeIn()
                 } else {
@@ -220,6 +212,18 @@
             $('.go_top').click(function () {
                 $('html').animate({ scrollTop: 0 }, 400)
             })
+        </script>
+
+        <script>
+            $('.nav')
+                .on('mouseenter', function () {
+                    $(this).parent().stop().animate({ height: 350 }, 'fast')
+                    $('.dimm').addClass('active')
+                })
+                .on('mouseleave', function () {
+                    $(this).parent().stop().animate({ height: 80 }, 'fast')
+                    $('.dimm').removeClass('active')
+                })
         </script>
     </body>
 </html>
